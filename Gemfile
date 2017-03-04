@@ -18,7 +18,6 @@ gem 'simple_form', '~> 3.1.0'
 gem 'aws-sdk', '< 2.0'
 gem 'mail_form', '~> 1.5.1'
 
-
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 

@@ -18,3 +18,222 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+.topnavbar {position: fixed; width: 20%; margin: 0; padding: 5px 1%; height: auto; z-index: 1000;}
+.navlist {float: right; list-style-type: none;}
+.navlist li {float: left; width: auto; padding: 0 5px; font-size: 40px; color: #fff;}
+
+.menustyle {cursor: pointer; z-index: 51; font-size: 24px; color: #000; width: auto;}
+.menustyle i {color: #000;}
+#menu-icon {cursor: pointer; z-index: 51; font-size: 24px; color: #000; width: auto;}
+#menu-icon i {color: #000;}
+#menu-icon2 {cursor: pointer; z-index: 51; font-size: 24px; color: #000; width: auto;}
+#menu-icon2 i {color: #000;}
+#menu-icon3 {cursor: pointer; z-index: 51; font-size: 24px; color: #000; width: auto;}
+#menu-icon3 i {color: #000;}
+
+.titleheader h1 i {font-size: 20px; color: #000;}
+
+body.noscroll {
+    overflow: hidden;
+    position: relative;
+}
+
+.nodisplay {display: none !important;}
+
+
+
+.rightmenu {font-family: "source-code-pro", sans-serif; width: 80%; margin: 0; padding: 0; font-size: 18px; color: #000; background-color: rgba(255, 255, 255, 1); overflow-y: scroll; height: 100%; list-style: none; position: fixed; top: 0; right: 0; z-index: 5000; 
+    transition: all 300ms ease 0s;  
+    -webkit-transition: all 300ms ease 0s;  
+    -moz-transition: all 300ms ease 0s;  
+    -o-transition: all 300ms ease 0s;  
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform:    translateX(100%);
+    -ms-transform:     translateX(100%);
+    -o-transform:      translateX(100%);
+}
+
+.rightmenu.revealed {
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+    -moz-transform:    translateX(0%);
+    -ms-transform:     translateX(0%);
+    -o-transform:      translateX(0%);
+}
+
+.hdtopmenu {font-family: "source-code-pro", sans-serif; width: 100%; height: 100%; margin: 0; padding: 0; font-size: 18px; color: #000; background-color: rgba(255, 255, 255, 1); overflow-y: hidden; list-style: none; position: fixed; top: 0; right: 0; z-index: 5000; 
+    transition: all 300ms ease 0s;  
+    -webkit-transition: all 300ms ease 0s;  
+    -moz-transition: all 300ms ease 0s;  
+    -o-transition: all 300ms ease 0s;  
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    -moz-transform:    translateY(-100%);
+    -ms-transform:     translateY(-100%);
+    -o-transform:      translateY(-100%);
+}
+
+.hdtopmenu.revealed {
+    overflow-y: auto;
+    transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+    -moz-transform:    translateY(0%);
+    -ms-transform:     translateY(0%);
+    -o-transform:      translateY(0%);
+}
+
+.hdleftmenu {font-family: "source-code-pro", sans-serif; width: 50%; height: 100%; margin: 0; padding: 0; font-size: 18px; color: #000; background-color: rgba(255, 255, 255, 1); overflow-y: hidden; list-style: none; position: fixed; top: 0; left: 0; z-index: 5000; 
+    transition: all 300ms ease 0s;  
+    -webkit-transition: all 300ms ease 0s;  
+    -moz-transition: all 300ms ease 0s;  
+    -o-transition: all 300ms ease 0s;  
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform:    translateX(-100%);
+    -ms-transform:     translateX(-100%);
+    -o-transform:      translateX(-100%);
+}
+
+.hdleftmenu.revealed {
+    overflow-y: auto;
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+    -moz-transform:    translateX(0%);
+    -ms-transform:     translateX(0%);
+    -o-transform:      translateX(0%);
+}
+
+.hdbottommenu {font-family: "source-code-pro", sans-serif; width: 100%; height: 60%; margin: 0; padding: 0; font-size: 18px; color: #000; background-color: rgba(255, 255, 255, 1); overflow-y: hidden; list-style: none; position: fixed; bottom: 0; right: 0; z-index: 5000; 
+    transition: all 300ms ease 0s;  
+    -webkit-transition: all 300ms ease 0s;  
+    -moz-transition: all 300ms ease 0s;  
+    -o-transition: all 300ms ease 0s;  
+    transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    -moz-transform:    translateY(100%);
+    -ms-transform:     translateY(100%);
+    -o-transform:      translateY(100%);
+}
+
+.hdbottommenu.revealed {
+    overflow-y: auto;
+    transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+    -moz-transform:    translateY(0%);
+    -ms-transform:     translateY(0%);
+    -o-transform:      translateY(0%);
+}
+
+.hdrightmenu {font-family: "source-code-pro", sans-serif; width: 50%; margin: 0; padding: 0; font-size: 18px; color: #000; background-color: rgba(255, 255, 255, 1); overflow-y: hidden; height: 100%; list-style: none; position: fixed; top: 0; right: 0; z-index: 5000; 
+    transition: all 300ms ease 0s;  
+    -webkit-transition: all 300ms ease 0s;  
+    -moz-transition: all 300ms ease 0s;  
+    -o-transition: all 300ms ease 0s;  
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform:    translateX(100%);
+    -ms-transform:     translateX(100%);
+    -o-transform:      translateX(100%);
+}
+
+.hdrightmenu.revealed {
+    overflow-y: auto;
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+    -moz-transform:    translateX(0%);
+    -ms-transform:     translateX(0%);
+    -o-transform:      translateX(0%);
+}
+
+.rightmenu ul {list-style-type: none; width: 100%; margin: 0; padding: 0;}
+.rightmenu ul li {float: left; width: 80%; height: auto; padding: 0; margin: 5px 10%;}
+.rightmenu ul li:hover {color: #000;}
+.menu-name {float: left; font-size: 18px; padding: 0 0 0 10px;}
+.rightmenu ul li.menu-top {float: left; width: 80%; height: auto; margin: 0; padding: 10px 10%; background: rgba(211,211,211,1); color: #000;}
+.rightmenu ul li.menu-top a {color: #000;}
+.rightmenu ul li.menu-top a:hover {color: #3498db;}
+
+.rightmenu ul a:hover li.menu-top {color: #fff;}
+.rightmenu ul li a {color: #000;}
+.rightmenu ul li a:hover {color: #3498db; text-decoration: none;}
+.rightmenu ul li a i {padding: 0 10px 0 0;}
+.menu-li {padding: 0 0 0 10px;}
+
+.mainbox {width: 100%; height: 100%; position: absolute; margin: 0; padding: 0;}
+.mainbox2 {width: 100%; height: 100%; position: absolute; margin: 0; padding: 0; background-color: rgba(183, 62, 150, .8);}
+.mainbox2 ul {list-style-type: none; margin: 10px 15px; padding: 0;}
+.mainbox2 ul li {float: left; width: auto; font-size: 36px; color: #fff; clear: both; text-transform: uppercase;}
+.headerlogo {width: 75%; height: auto; float: left; margin: 10px; padding: 0;}
+
+.mainbox3 {float: left; width: 100%; margin: 0; padding: 0;}
+.mainbox3 ul {list-style-type: none; margin: 10px 15px; padding: 0;}
+.mainbox3 ul li {float: left; width: auto; font-size: 36px; color: #fff; clear: both; text-transform: uppercase;}
+
+.overlay {cursor: pointer; position: fixed; background-color: rgba(255,255,255, 0); bottom: 0; left: 0; top: 0; right: 0; z-index: 4000; opacity: 1;
+    transition: opacity .25s linear 0s;
+    -webkit-transition: opacity .25s linear 0s; 
+    -moz-transition: opacity .25s linear 0s;  
+    -o-transition: opacity .25s linear 0s;
+}
+.overlay.revealed {cursor: pointer; position: fixed; background-color: rgba(0,0,0,.6); bottom: 0; left: 0; top: 0; right: 0; z-index: 4000; opacity: 1;
+    transition: opacity .25s linear 0s;
+    -webkit-transition: opacity .25s linear 0s; 
+    -moz-transition: opacity .25s linear 0s;  
+    -o-transition: opacity .25s linear 0s;
+}
+
+.topbar ul li a i {color: #fff;}
+.topbar ul li a i:hover {color: #000;}
+
+
+
+.workbox {float: left; width: 11400px; margin: 0; padding: 50px 0; font-family: "futura pt", sans-serif; font-weight: 300;}
+.workimage {position: relative; top: 0; left: 0px; margin: 25px; width: 300px; height: 600px;}
+
+
+.mainbox2mobile {display: none;}
+
+ul.services {float: left; width: 100%; font-size: 18px; color: #000; height: 0; overflow: hidden; margin: 0; padding: 0;
+    transition: all 300ms ease 0s;  
+    -webkit-transition: all 300ms ease 0s;  
+    -moz-transition: all 300ms ease 0s;  
+    -o-transition: all 300ms ease 0s;
+    }
+ul.services.revealed {height: 80px;}
+
+ul.services li {font-size: 18px; color: #000; cursor: pointer;}
+
+@media screen and (max-width: 640px){
+
+    .topnavbar {position: fixed; width: 40%; margin: 0; padding: 5px 1%; height: auto; z-index: 1000;}
+    .rightmenu {font-family: "source-code-pro", sans-serif; width: 90%; margin: 0; padding: 0; font-size: 18px; color: #000; overflow-y: scroll; height: 100%; list-style: none; position: fixed; top: 0; right: 0; z-index: 5000; 
+    transition: all 300ms ease 0s;  
+    -webkit-transition: all 300ms ease 0s;  
+    -moz-transition: all 300ms ease 0s;  
+    -o-transition: all 300ms ease 0s;  
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform:    translateX(100%);
+    -ms-transform:     translateX(100%);
+    -o-transform:      translateX(100%);
+    }
+
+    .headerlogo {width: 100%; height: auto; float: left; margin: 10px 0; padding: 0;}
+    .workbox {float: left; width: 8100px; margin: 0; padding: 50px 0; font-family: "futura pt", sans-serif; font-weight: 300;}
+    .workimage {position: relative; top: 0; left: 0px; margin: 25px; width: 200px; height: 400px;}
+
+    .topnavbar.revealed {position: fixed; width: 10%; margin: 0; padding: 5px 1%; height: auto; z-index: 1000;}
+
+    .mainbox3.revealed ul {display: none;}
+
+    .mainbox2 {width: 100%; height: 100%; position: absolute; margin: 0; padding: 0; background: rgba(183, 62, 150, .8);}
+
+    .mainbox2mobile {width: 100%; height: 100%; position: absolute; margin: 0; padding: 0; display: inline;}
+    .mainbox {width: 100%; height: 100%; position: absolute; margin: 0; padding: 0; background: rgba(183, 62, 150, .8) url('giphy.gif'); background-size: 120% auto; background-repeat: no-repeat;}
+
+    .hdleftmenu {width: 80%; height: 100%;}
+
+    .hdrightmenu {width: 80%; height: 100%;}
+}

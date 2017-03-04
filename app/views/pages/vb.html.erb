@@ -1,0 +1,1583 @@
+<div id="checkoutclt">
+
+	<div class="interactsection">
+
+
+		<div class="hiddenmeme">
+			<div id="overwrap" class="active">
+				
+				<div id="holder" class="contentoverlay show" style="transform: scale(1.0);">
+
+					<div id="canvasholder">
+
+
+						<div id="canvasbox">
+							<div class="backgroundpart">
+								<h1>Happy Drakentine</h1>
+								<p>(Scroll down to choose lyrics, background color & add faces.)</p>
+							<div class="canvascontainer">
+									<canvas id="myCanvas" width="400" height="400" margin="0 auto 0 auto"></canvas>
+
+									<input type="file" id="fileElem" multiple accept="image/*" style="display:none; width:300px;" onchange="handleFiles(this.files)">
+
+									<input type="file" id="fileElem2" multiple accept="image/*" style="display:none; width:300px;" onchange="handleFiles(this.files)">
+
+						<% if false %>
+						<a href="#" id="fileSelect" class="active">UPLOAD FILE</a>
+
+						<a href="#" id="fileUpdate"  class="">UPDATE FILE</a>
+						<% end %>
+
+						</div>
+					</div>
+
+							<div id="hiddentextform1" class="canvas-text"></div>
+							<div id="hiddentextform2" class="canvas-text"></div>
+
+
+						<div class="cltsteps2">
+
+							<div id="tofrombutton" class="tofrombox">
+								To:</br>From:
+
+							</div>
+
+							<div id="lyricbutton" class="chooselyric">
+								Choose</br>Lyrics
+							</div>
+
+							<div id="colorselectionbutton" class="colorbox">
+								<%= image_tag 'colorbox.png', :class => "frontimage" %>
+							</div>
+
+							<div id="facesbutton" class="facesbox">
+								<%= image_tag 'facesbox.png', :class => "frontimage" %>
+							</div>					
+
+							<% if false %>
+							<input id="delete0" type="button" value="delete0" /> 
+							<input id="delete1" type="button" value="delete1" /> 
+							<input id="delete2" type="button" value="delete2" /> 
+							<input id="delete3" type="button" value="delete3" /> 
+							<input id="delete4" type="button" value="delete4" /> 
+							<input id="delete5" type="button" value="delete5" /> 
+							<input id="delete6" type="button" value="delete6" /> 
+							<input id="delete7" type="button" value="delete7" /> 
+							<input id="delete8" type="button" value="delete8" /> 
+							<input id="delete9" type="button" value="delete9" /> 
+							<input id="delete10" type="button" value="delete10" /> 
+							<input id="deleteall" type="button" value="deleteall" /> 
+							<% end %>
+
+							<div id="hdsaveimage" onclick="saveCanvas2()">Create Card</div>
+
+							 <div class="cchome2"><%= link_to "Powered by Chickens", root_path %></div>
+						</div>
+
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+<div class="overlay nodisplay"></div>
+
+<div id="hdmenu1" class="hdtopmenu revealed">
+	<div class="hdintromenu">
+		<%= image_tag 'facesbox.png' %>
+		<div class="hdheader">
+			Happy</br>Drakentine
+		</div>
+		<p>Drakentine day is the day to get your ex back, get the person of your dreams or just try using your sensitive side for once.</p>
+
+		<form id="cltform"  method="post" action="">
+			<div class="field-holder">
+				<label for="text11">TO:</label>
+				<input class="small" id="text11" type="text" value="" maxlength="50" autocomplete="off" placeholder="(enter name)" name="textform1" onkeyup="checkText()" onkeyup="formChanged()" onchange="formChanged()">
+
+			</div>
+			<div class="field-holder">
+				<label for="text22">FROM:</label>
+				<input class="small" id="text22" type="text" value="" maxlength="50" autocomplete="off" placeholder="(enter name)" name="textform2" onkeyup="checkText()" onkeyup="formChanged()" onchange="formChanged()">
+
+			</div>
+
+		</form>
+
+		<div class="createbutton" id="launch" onclick="addText()">Create Your</br>Drakentine Card</div>
+
+		 <div class="cchome"><%= link_to "Looking for Chicken Coop Home Page? Go Here", root_path %></div>
+	</div>
+
+ </div>
+
+<div id="hdmenu2" class="hdleftmenu">
+  <div class="hdlyricmenu">
+    <h1>Choose Lyric</h1>
+    <div id="lyric1" class="lyricbuttons">“I better find your lovin’.</br>I better find your heart.</br>I bet if I give all my love.</br>Then nothing’s gonna tear</br>us apart.”
+    </div>
+    <div id="lyric2" class="lyricbuttons">“I search for something I’m</br>missing and disappear when I’m</br>bored. But girl, what qualities</br>was I looking for before?</br>Who you settling for? Who</br>better for you than the boy?”
+    </div>
+    <div id="lyric3" class="lyricbuttons">“I realize I waited too long,</br>but please don't move on.</br>You don't need no one else.”
+    </div>
+    <div id="lyric4" class="lyricbuttons">"I never had you, although I</br>would be glad to. I'd probably go</br>and tattoo, your name on my</br>heart."
+    </div>
+    <div id="lyric5" class="lyricbuttons">“I never said it'd be fair. But</br>when you're all alone, I hope</br>you truly know how bad I want</br>to be there.”
+    </div>
+    <div id="lyric6" class="lyricbuttons">"I got bath water you could</br>soak in, things I could do</br>with lotion."
+    </div>
+    <div id="lyric7" class="lyricbuttons">“They keep telling me don't</br>save you. If I ignore all that</br>advice, and something isn't</br>right. Then who will I complain</br>to?”
+    </div>
+    <div id="lyric8" class="lyricbuttons">“You telling me it's only been a</br>couple other people that you've</br>been with. I'ma trust you, I'ma</br>give you the benefit of the</br>doubt, and I'ma love you. You</br>can even call me daddy, give</br>you someone to look up to.”
+    </div>
+    <div id="lyric9" class="lyricbuttons">“I need you to rescue me from my</br>destiny. I'm trying to live</br>right and give you whatever's</br>left of me.”
+    </div>
+    <div id="lyric10" class="lyricbuttons">"You could have my heart or we</br>could share it like the last</br>slice."
+    </div>
+    <div id="lyric11" class="lyricbuttons">“I got an email today. Kind of</br>thought that you forgot about</br>me. But I want to hit you back</br>to say. Just like you, I get</br>lonely.”
+    </div>
+   <div id="lyric12" class="lyricbuttons">“But it's too late, cause I'm</br>already yours. You just gotta</br>promise me, hearts won't break,</br>and end up like before.”
+    </div>
+   <div id="lyric13" class="lyricbuttons">“Always saw you for what you</br>could've been. Ever since you</br>met me. Like when Chrysler</br>made that one car that looked</br>just like the Bentley.”
+    </div>
+   <div id="lyric14" class="lyricbuttons">“If I ever loved ya, I'll always</br>love ya that's how I was raised”
+    </div>
+    <div id="lyric15" class="lyricbuttons">“I know you're seein' someone</br>that loves you. And I don't</br>want you to see no one else.</br>I don't want you here with no</br>one else. I don't wanna do this</br>with no one else.”
+    </div>
+    <div id="lyric16" class="lyricbuttons">“Working, working, working,</br>working, ain't ya? You don't</br>have no time to lay up. You just</br>trying to be somebody. 'Fore you</br>say you need somebody. Get all</br>your affairs in order. I won't</br>have affairs, I'm yours, girl.”
+    </div>
+    <div id="lyric17" class="lyricbuttons">“Pack a bag, you gon' end up</br>staying where I'm at. Took you</br>from the hood and I could never</br>give you back. I just wanna let</br>you know that someone love</br>you back.”
+    </div>
+    <div id="lyric18" class="lyricbuttons">“And I wanna tell you my</br>intentions. I wanna do the</br>things that I mention. I</br>wanna benefit from the</br>friendship. I wanna get the</br>late night message from you,</br>from you.”
+    </div>
+    <div id="lyric19" class="lyricbuttons">“I think I'd lie for you</br>I think I'd die for you</br>Jodeci "Cry For You"</br>Do things when you want me to”
+    </div>
+    <div id="lyric20" class="lyricbuttons">“Tell me should I cut these</br>other girls right out of my</br>life? Cause we never decided.”
+    </div>
+    <div id="lyric21" class="lyricbuttons">“Yeah, you've been on my</br>mind lately. You've still</br>got my number, girl, you</br>need to call me.”
+    </div> 
+    <div id="lyric22" class="lyricbuttons">“I got my eyes on you. You're</br>everything that I see. I</br>want your hot love and</br>emotion endlessly. I can't</br>get over you. You left your</br>mark on me. I want your hot</br>love and emotion endlessly.”
+    </div> 
+    <div id="lyric23" class="lyricbuttons">“Swanging, eyes closed just</br>swanging. Same city, same</br>friends if you're looking for</br>me. Same city, same friends if</br>you're looking. I'll be here</br>just swanging.”
+    </div> 
+
+
+  
+  </div>
+ </div>
+
+<div id="hdmenu3" class="hdbottommenu">
+  <div class="hdcolormenu">
+    <h1>What Background Color?</h1>
+    <div class="colorbuttonsbox">
+	    <div id="red" class="colorbuttons red"></div>
+	    <div id="blue" class="colorbuttons blue"></div>
+	    <div id="green" class="colorbuttons green"></div>
+	    <div id="purple" class="colorbuttons purple"></div>
+	    <div id="slate" class="colorbuttons slate"></div>
+	    <div id="lime" class="colorbuttons lime"></div>
+	    <div id="yellow" class="colorbuttons yellow"></div>
+	    <div id="orange" class="colorbuttons orange"></div>
+	    <div id="pink" class="colorbuttons pink"></div>
+	    <div id="torquise" class="colorbuttons torquise"></div>
+	    <div id="gray" class="colorbuttons gray"></div>
+	    <div id="darkred" class="colorbuttons darkred"></div>
+	</div>
+  </div>
+ </div>
+
+<div id="hdmenu4" class="hdrightmenu">
+  <div class="hdfacemenu">
+    <h1>Add Faces</h1>
+    <input type="file" id="imgLoader">
+    <div id="face1" class="facebuttons">
+    	<%= image_tag 'faces1.png' %>
+    </div>
+    <div id="face2" class="facebuttons">
+    	<%= image_tag 'faces2.png' %>
+    </div>
+    <div id="face3" class="facebuttons">
+    	<%= image_tag 'faces3.png' %>
+    </div>
+    <div id="face4" class="facebuttons">
+    	<%= image_tag 'faces4.png' %>
+    </div>
+    <div id="face5" class="facebuttons">
+    	<%= image_tag 'faces5.png' %>
+    </div>
+    <div id="face6" class="facebuttons">
+    	<%= image_tag 'faces6.png' %>
+    </div>
+    <div id="face7" class="facebuttons">
+    	<%= image_tag 'faces7.png' %>
+    </div>
+    <div id="face8" class="facebuttons">
+    	<%= image_tag 'faces8.png' %>
+    </div>
+  </div>
+ </div>
+
+<div id="hdmenu6" class="hdtopmenu">
+	<div class="hdintromenu">
+		<p>"Happy Drakentine" application may not work for your current browser as expected.  Please use a modern broswer like Chrome, Firefox or Opera.  Thanks.</p>
+
+		<div class="createbutton" onclick="removeAlert()">Continue</div>
+
+	</div>
+ </div>
+<div id="hdmenu7" class="hdtopmenu">
+	<div class="hdintromenu">
+		<%= image_tag 'facesbox.png' %>
+		<div class="hdheader">
+			Happy</br>Drakentine
+		</div>
+		<p>Thanks for checking out our "Happy Drakentine" application.  This app was created by the Chicken Coop Team and 330 Monday Team.</p>
+
+		<%= link_to root_path, :target => "_blank" do %>
+		<%= image_tag 'chicken.png', :class => "chickenlogo" %>
+		<% end %>
+
+		<%= link_to "http://www.330monday.com/", :target => "_blank" do %>
+		<%= image_tag '330monday-logo.png', :class => "chickenlogo" %>
+		<% end %>
+
+		<div class="createbutton" onclick="createAnother()">Create Another One</div>
+
+	</div>
+ </div>
+
+<% if false %>
+ <div id="hdmenu5" class="hdrightmenu">
+  <div class="hdobjectmenu">
+    <h1>Add Objects</h1>
+    <div id="face1" class="objectbuttons">
+    	<%= image_tag 'facesbox.png' %>
+    </div>
+    <div id="face2" class="objectbuttons">
+    	<%= image_tag 'facesbox.png' %>
+    </div>
+    <div id="face3" class="objectbuttons">
+    	<%= image_tag 'facesbox.png' %>
+    </div>
+    <div id="face4" class="objectbuttons">
+    	<%= image_tag 'facesbox.png' %>
+    </div>
+  </div>
+ </div>
+ <% end %>
+
+
+
+<script type="text/javascript">
+var ua = navigator.userAgent.toLowerCase();
+var check = function(r) {
+    return r.test(ua);
+};
+var DOC = document;
+var isStrict = DOC.compatMode == "CSS1Compat";
+var isOpera = check(/opera/);
+var isChrome = check(/chrome/);
+var isWebKit = check(/webkit/);
+var isSafari = !isChrome && check(/safari/);
+var isSafari2 = isSafari && check(/applewebkit\/4/); // unique to
+// Safari 2
+var isSafari3 = isSafari && check(/version\/3/);
+var isSafari4 = isSafari && check(/version\/4/);
+var isIE = !isOpera && check(/msie/);
+var isIE7 = isIE && check(/msie 7/);
+var isIE8 = isIE && check(/msie 8/);
+var isIE6 = isIE && !isIE7 && !isIE8;
+var isGecko = !isWebKit && check(/gecko/);
+var isGecko2 = isGecko && check(/rv:1\.8/);
+var isGecko3 = isGecko && check(/rv:1\.9/);
+var isBorderBox = isIE && !isStrict;
+var isWindows = check(/windows|win32/);
+var isMac = check(/macintosh|mac os x/);
+var isAir = check(/adobeair/);
+var isLinux = check(/linux/);
+var isSecure = /^https/i.test(window.location.protocol);
+var isIE7InIE8 = isIE7 && DOC.documentMode == 7;
+var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
+
+var jsType = '', browserType = '', browserVersion = '', osName = '';
+var ua = navigator.userAgent.toLowerCase();
+var check = function(r) {
+    return r.test(ua);
+};
+
+if(isWindows){
+    osName = 'Windows';
+
+    if(check(/windows nt/)){
+        var start = ua.indexOf('windows nt');
+        var end = ua.indexOf(';', start);
+        osName = ua.substring(start, end);
+    }
+} else {
+    osName = isMac ? 'Mac' : isLinux ? 'Linux' : 'Other';
+} 
+
+if(isIE){
+    browserType = 'IE';
+    jsType = 'IE';
+
+    var versionStart = ua.indexOf('msie') + 5;
+    var versionEnd = ua.indexOf(';', versionStart);
+    browserVersion = ua.substring(versionStart, versionEnd);
+
+    jsType = isIE6 ? 'IE6' : isIE7 ? 'IE7' : isIE8 ? 'IE8' : 'IE';
+} else if (isGecko){
+    var isFF =  check(/firefox/);
+    browserType = isFF ? 'Firefox' : 'Others';;
+    jsType = isGecko2 ? 'Gecko2' : isGecko3 ? 'Gecko3' : 'Gecko';
+
+    if(isFF){
+        var versionStart = ua.indexOf('firefox') + 8;
+        var versionEnd = ua.indexOf(' ', versionStart);
+        if(versionEnd == -1){
+            versionEnd = ua.length;
+        }
+        browserVersion = ua.substring(versionStart, versionEnd);
+    }
+} else if(isChrome){
+    browserType = 'Chrome';
+    jsType = isWebKit ? 'Web Kit' : 'Other';
+
+    var versionStart = ua.indexOf('chrome') + 7;
+    var versionEnd = ua.indexOf(' ', versionStart);
+    browserVersion = ua.substring(versionStart, versionEnd);
+}else{
+    browserType = isOpera ? 'Opera' : isSafari ? 'Safari' : '';
+}
+
+
+if(isIE11 || isIE || isIE6 || isIE8 || isIE7 || isIE7InIE8 || isSafari || isSafari2 || isSafari3 || isSafari4) {
+
+	$('#hdmenu6').addClass('revealed');
+	$('#hdmenu1').removeClass('revealed');
+	$('.overlay').addClass('nodisplay');
+	$('body').addClass("noscroll");
+}
+
+	function removeAlert(){
+	$('#hdmenu6').removeClass('revealed');
+	$('#hdmenu1').addClass('revealed');
+	$('.overlay').removeClass('nodisplay');
+	$('body').addClass("noscroll");
+	}
+
+
+	function createAnother(){
+	$('#hdmenu7').removeClass('revealed');
+	$('#hdmenu1').addClass('revealed');
+	$('.overlay').removeClass('nodisplay');
+	$('body').addClass("noscroll");
+	}
+
+	  $('#tofrombutton').click(function(){
+	    $('#hdmenu1').addClass('revealed');
+	    $('.overlay').removeClass('nodisplay');
+	    $('body').addClass("noscroll");
+	  });
+	  $('#lyricbutton').click(function(){
+	    $('#hdmenu2').addClass('revealed');
+	    $('.overlay').removeClass('nodisplay');
+	    $('body').addClass("noscroll");
+	  });
+	  $('#colorselectionbutton').click(function(){
+	    $('#hdmenu3').addClass('revealed');
+	    $('.overlay').removeClass('nodisplay');
+	    $('body').addClass("noscroll");
+	  });
+	  $('#facesbutton').click(function(){
+	    $('#hdmenu4').addClass('revealed');
+	    $('.overlay').removeClass('nodisplay');
+	    $('body').addClass("noscroll");
+	  });
+	  $('#objectbutton').click(function(){
+	    $('#hdmenu5').addClass('revealed');
+	    $('.overlay').removeClass('nodisplay');
+	    $('body').addClass("noscroll");
+	  });  
+	  $('#hdsaveimage').click(function(){
+	    $('#hdmenu7').addClass('revealed');
+	    $('.overlay').removeClass('nodisplay');
+	    $('body').addClass("noscroll");
+	  });  	  
+	  $('.overlay').click(function(){
+	    $('#hdmenu1').removeClass('revealed');
+	    $('#hdmenu2').removeClass('revealed');
+	    $('#hdmenu3').removeClass('revealed');
+	    $('#hdmenu4').removeClass('revealed');
+	    $('#hdmenu5').removeClass('revealed');
+	    $('.overlay').addClass('nodisplay');
+	    $('body').removeClass("noscroll");
+
+	  });
+		$("#sitemenu-icon").click(function(){
+			$("#overwrap").removeClass("active");
+			$("#holder").removeClass("show");
+			$("#sitemenu-icon").removeClass("open");
+			$("#sitemenu-icon").addClass("nodisplay");
+			$('body').removeClass("noscroll");
+			removeText();
+		});
+		$("#saveimage").click(function(){
+			$("#overwrap2").addClass("active");
+			$("#holder").addClass("show");
+			$("#sitemenu-icon").addClass("open");
+			$("#sitemenu-icon").removeClass("nodisplay");
+			$('body').addClass("noscroll");
+		});
+		
+
+
+		function checkText() {
+			var mytext1 = document.getElementById('text11').value;
+			var mytext2 = document.getElementById('text22').value;
+
+			if(!mytext2.match(/\S/)) {
+		        $("#step1").addClass("active");
+		        $("#step2").removeClass("active");
+		        return false;
+		    } else {
+		        $("#step2").addClass("active");
+		        $("#step1").removeClass("active");
+		        return true;
+		    }
+
+		    console.log('heyYo');
+		}
+
+		checkText();
+
+		$('body').addClass("noscroll");
+
+        var canvas = new fabric.Canvas('myCanvas');
+        var imageCheck = false;
+        canvas.setHeight(400);
+		canvas.setWidth(400);
+
+        canvas.hoverCursor = 'move';
+
+		canvas.setBackgroundColor('rgba(117, 255, 244, 1)', canvas.renderAll.bind(canvas));
+
+		var text = new fabric.Text("www.chickencoop.cc", { left: 125, top: 380, fontSize: 15, fontFamily: "blockhead-unplugged" }, fillStyle = '#000');
+
+		var text3 = new fabric.Text("", { left: 125, top: 320, fontSize: 18, fontFamily: "blockhead-unplugged", textBackgroundColor: 'rgba(255,157,41, 0)' }, fillStyle = '#000');
+		var text5 = new fabric.Text("Happy Drakentine", { left: 170, top: 290, fontSize: 25, fontFamily: "blockhead-unplugged" }, fillStyle = '#000');
+
+		var text11 = new fabric.Text('“I search for something I’m\nmissing and disappear when I’m\nbored. But girl, what qualities\nwas I looking for before?\nWho you settling for? Who\nbetter for you than the boy?”', { left: 15, top: 50, fontSize: 25, lineHeight: 1, fontFamily: "blockhead-unplugged", textBackgroundColor: 'rgba(255,157,41, 0)' }, fillStyle = '#000');
+
+		text11.on('selected', function() {
+		    window.location.href = "http://www.ccevans.com/";
+		})
+		canvas.add(text11);
+		canvas.sendToBack(text11);
+	
+
+		text.set({fill: '#000'});
+		text3.set({fill: '#000'});
+		text5.set({fill: '#000'});
+
+        canvas.add(text);
+        console.log("text1");
+		canvas.add(text3);
+		console.log("text2");
+		canvas.add(text5);
+		console.log("text3");
+
+		text.set('selectable', false);
+		text3.set('selectable', false);
+		//text5.set('selectable', false18
+		//var colorSet = $(".selectedcolor").css("background-color");
+		var colorSet = '#FFF';
+
+		//When clicking on control list items
+		$(".controlbox").on("click", "li", function(){
+		  //Deselect sibling elements
+		  $(this).siblings().removeClass("selectedcolor");
+		  //Select clicked element
+		  $(this).addClass("selectedcolor");
+		  //cache current color
+		  colorSet = $(this).css("background-color");
+		  changeColor();
+		  console.log(colorSet);
+		});
+
+	function changeColor(){
+		var shapeChange = canvas.item(10); 
+		shapeChange.setFill(colorSet);
+	}
+
+	document.getElementById('imgLoader').onchange = function handleImage(e) {
+	    var reader = new FileReader();
+	    reader.onload = function (event) { console.log('fdsf');
+	        var imgObj = new Image();
+	        imgObj.src = event.target.result;
+	        imgObj.onload = function () {
+	            // start fabricJS stuff
+	            
+	            var image = new fabric.Image(imgObj);
+	            image.set({
+	                left: 250,
+	                top: 250,
+	                angle: 20,
+	                padding: 10,
+	                cornersize: 10
+	            });
+	            //image.scale(getRandomNum(0.1, 0.25)).setCoords();
+	            canvas.add(image);
+	            
+	            // end fabricJS stuff
+	        }
+	        
+	    }
+	    reader.readAsDataURL(e.target.files[0]);
+	}
+
+//	  fabric.loadSVGFromURL('/assets/face2.svg', function(objects, options) {
+//	    var shape = fabric.util.groupSVGElements(objects, options);
+//	    shape.set({
+//	        left: 40, 
+//			top: 270,  
+//			opacity: 1,
+//			scaleY: (canvas.width / shape.width + 2/canvas.width)*.25,
+//			scaleX: (canvas.width / shape.width + 2/canvas.width)*.25
+//	    });
+//
+//	    console.log("skyline");
+//
+//	    //removeObject();
+//	    canvas.add(shape);
+//	    //shape.set('selectable', false);
+//	    //canvas.sendToBack(shape);
+//		canvas.renderAll();
+//	  }); 
+
+ //fabric.loadSVGFromURL('/assets/creativenc.svg', function(objects, options) {
+//	    var shape = fabric.util.groupSVGElements(objects, options);
+//	    shape.set({
+//	        left: 0, 
+//			top: 100, 
+//			opacity: 1,
+//			scaleY: canvas.width / shape.width + 2/canvas.width,
+//			scaleX: canvas.width / shape.width + 2/canvas.width
+//	    });
+//
+//	    console.log("skyline");
+//
+//	    if (shape.isSameColor && shape.isSameColor() || !shape.paths) {
+//	      shape.setFill(colorSet);
+//	    }
+//	    else if (shape.paths) {
+//	      for (var i = 0; i < shape.paths.length; i++) {
+//	        shape.paths[i].setFill(colorSet);
+//	      }
+//	    }
+//
+//	    canvas.add(shape);
+//	    //shape.set('selectable', false);
+//		canvas.sendToBack(shape);
+//		canvas.renderAll();
+//	  }); 
+
+
+  $("#red").click(function(){
+  	removeOverlay();
+  	canvas.setBackgroundColor('rgba(254, 162, 155,1)', canvas.renderAll.bind(canvas));
+  	$('.backgroundpart').addClass('red');
+  	$('.backgroundpart').removeClass('green');
+  	$('.backgroundpart').removeClass('blue');
+   	$('.backgroundpart').removeClass('purple');
+   	$('.backgroundpart').removeClass('slate');
+   	$('.backgroundpart').removeClass('lime');
+    $('.backgroundpart').removeClass('yellow');
+   	$('.backgroundpart').removeClass('orange');
+   	$('.backgroundpart').removeClass('pink');
+   	$('.backgroundpart').removeClass('torquise');
+   	$('.backgroundpart').removeClass('gray');
+   	$('.backgroundpart').removeClass('darkred');
+  });
+  $("#green").click(function(){
+  	removeOverlay();
+  	canvas.setBackgroundColor('rgba(155, 254, 227,1)', canvas.renderAll.bind(canvas));
+  	$('.backgroundpart').addClass('green');
+  	$('.backgroundpart').removeClass('red');
+  	$('.backgroundpart').removeClass('blue');
+  	$('.backgroundpart').removeClass('purple');
+   	$('.backgroundpart').removeClass('slate');
+   	$('.backgroundpart').removeClass('lime');
+    $('.backgroundpart').removeClass('yellow');
+   	$('.backgroundpart').removeClass('orange');
+   	$('.backgroundpart').removeClass('pink');
+   	$('.backgroundpart').removeClass('torquise');
+   	$('.backgroundpart').removeClass('gray');
+   	$('.backgroundpart').removeClass('darkred');
+  });
+  $("#blue").click(function(){
+  	removeOverlay();
+  	canvas.setBackgroundColor('rgba(155, 238, 254,1)', canvas.renderAll.bind(canvas));
+  	$('.backgroundpart').addClass('blue');
+  	$('.backgroundpart').removeClass('green');
+  	$('.backgroundpart').removeClass('red');
+  	$('.backgroundpart').removeClass('purple');
+   	$('.backgroundpart').removeClass('slate');
+   	$('.backgroundpart').removeClass('lime');
+    $('.backgroundpart').removeClass('yellow');
+   	$('.backgroundpart').removeClass('orange');
+   	$('.backgroundpart').removeClass('pink');
+   	$('.backgroundpart').removeClass('torquise');
+   	$('.backgroundpart').removeClass('gray');
+   	$('.backgroundpart').removeClass('darkred');
+  });
+  $("#purple").click(function(){
+  	removeOverlay();
+  	canvas.setBackgroundColor('rgba(198, 164, 255, 1)', canvas.renderAll.bind(canvas));
+  	$('.backgroundpart').addClass('purple');
+  	$('.backgroundpart').removeClass('green');
+  	$('.backgroundpart').removeClass('red');
+  	$('.backgroundpart').removeClass('blue');
+   	$('.backgroundpart').removeClass('slate');
+   	$('.backgroundpart').removeClass('lime');
+    $('.backgroundpart').removeClass('yellow');
+   	$('.backgroundpart').removeClass('orange');
+   	$('.backgroundpart').removeClass('pink');
+   	$('.backgroundpart').removeClass('torquise');
+   	$('.backgroundpart').removeClass('gray');
+   	$('.backgroundpart').removeClass('darkred');
+  });
+  $("#slate").click(function(){
+  	removeOverlay();
+  	canvas.setBackgroundColor('rgba(155, 181, 254, 1)', canvas.renderAll.bind(canvas));
+  	$('.backgroundpart').addClass('slate');
+  	$('.backgroundpart').removeClass('green');
+  	$('.backgroundpart').removeClass('red');
+  	$('.backgroundpart').removeClass('blue');
+   	$('.backgroundpart').removeClass('purple');
+   	$('.backgroundpart').removeClass('lime');
+    $('.backgroundpart').removeClass('yellow');
+   	$('.backgroundpart').removeClass('orange');
+   	$('.backgroundpart').removeClass('pink');
+   	$('.backgroundpart').removeClass('torquise');
+   	$('.backgroundpart').removeClass('gray');
+   	$('.backgroundpart').removeClass('darkred');
+  });
+  $("#lime").click(function(){
+  	removeOverlay();
+  	canvas.setBackgroundColor('rgba(192, 254, 155, 1)', canvas.renderAll.bind(canvas));
+  	$('.backgroundpart').addClass('lime');
+  	$('.backgroundpart').removeClass('green');
+  	$('.backgroundpart').removeClass('red');
+  	$('.backgroundpart').removeClass('blue');
+   	$('.backgroundpart').removeClass('purple');
+   	$('.backgroundpart').removeClass('slate');
+    $('.backgroundpart').removeClass('yellow');
+   	$('.backgroundpart').removeClass('orange');
+   	$('.backgroundpart').removeClass('pink');
+   	$('.backgroundpart').removeClass('torquise');
+   	$('.backgroundpart').removeClass('gray');
+   	$('.backgroundpart').removeClass('darkred');
+  });
+  $("#yellow").click(function(){
+  	removeOverlay();
+  	canvas.setBackgroundColor('rgba(246, 254, 155, 1)', canvas.renderAll.bind(canvas));
+  	$('.backgroundpart').addClass('yellow');
+  	$('.backgroundpart').removeClass('green');
+  	$('.backgroundpart').removeClass('red');
+  	$('.backgroundpart').removeClass('blue');
+   	$('.backgroundpart').removeClass('purple');
+   	$('.backgroundpart').removeClass('slate');
+    $('.backgroundpart').removeClass('lime');
+   	$('.backgroundpart').removeClass('orange');
+   	$('.backgroundpart').removeClass('pink');
+   	$('.backgroundpart').removeClass('torquise');
+   	$('.backgroundpart').removeClass('gray');
+   	$('.backgroundpart').removeClass('darkred');
+  });
+  $("#orange").click(function(){
+  	removeOverlay();
+  	canvas.setBackgroundColor('rgba(254, 209, 155, 1)', canvas.renderAll.bind(canvas));
+  	$('.backgroundpart').addClass('orange');
+  	$('.backgroundpart').removeClass('green');
+  	$('.backgroundpart').removeClass('red');
+  	$('.backgroundpart').removeClass('blue');
+   	$('.backgroundpart').removeClass('purple');
+   	$('.backgroundpart').removeClass('slate');
+    $('.backgroundpart').removeClass('lime');
+   	$('.backgroundpart').removeClass('yellow');
+   	$('.backgroundpart').removeClass('pink');
+   	$('.backgroundpart').removeClass('torquise');
+   	$('.backgroundpart').removeClass('gray');
+   	$('.backgroundpart').removeClass('darkred');
+  });
+  $("#pink").click(function(){
+  	removeOverlay();
+  	canvas.setBackgroundColor('rgba(254, 155, 183, 1)', canvas.renderAll.bind(canvas));
+  	$('.backgroundpart').addClass('pink');
+  	$('.backgroundpart').removeClass('green');
+  	$('.backgroundpart').removeClass('red');
+  	$('.backgroundpart').removeClass('blue');
+   	$('.backgroundpart').removeClass('purple');
+   	$('.backgroundpart').removeClass('slate');
+    $('.backgroundpart').removeClass('lime');
+   	$('.backgroundpart').removeClass('yellow');
+   	$('.backgroundpart').removeClass('orange');
+   	$('.backgroundpart').removeClass('torquise');
+   	$('.backgroundpart').removeClass('gray');
+   	$('.backgroundpart').removeClass('darkred');
+  });
+  $("#torquise").click(function(){
+  	removeOverlay();
+  	canvas.setBackgroundColor('rgba(62, 224, 226, 1)', canvas.renderAll.bind(canvas));
+  	$('.backgroundpart').addClass('torquise');
+  	$('.backgroundpart').removeClass('green');
+  	$('.backgroundpart').removeClass('red');
+  	$('.backgroundpart').removeClass('blue');
+   	$('.backgroundpart').removeClass('purple');
+   	$('.backgroundpart').removeClass('slate');
+    $('.backgroundpart').removeClass('lime');
+   	$('.backgroundpart').removeClass('yellow');
+   	$('.backgroundpart').removeClass('orange');
+   	$('.backgroundpart').removeClass('pink');
+   	$('.backgroundpart').removeClass('gray');
+   	$('.backgroundpart').removeClass('darkred');
+  });
+  $("#gray").click(function(){
+  	removeOverlay();
+  	canvas.setBackgroundColor('rgba(233, 233, 233, 1)', canvas.renderAll.bind(canvas));
+  	$('.backgroundpart').addClass('gray');
+  	$('.backgroundpart').removeClass('green');
+  	$('.backgroundpart').removeClass('red');
+  	$('.backgroundpart').removeClass('blue');
+   	$('.backgroundpart').removeClass('purple');
+   	$('.backgroundpart').removeClass('slate');
+    $('.backgroundpart').removeClass('lime');
+   	$('.backgroundpart').removeClass('yellow');
+   	$('.backgroundpart').removeClass('orange');
+   	$('.backgroundpart').removeClass('pink');
+   	$('.backgroundpart').removeClass('torquise');
+   	$('.backgroundpart').removeClass('darkred');
+  });
+  $("#darkred").click(function(){
+  	removeOverlay();
+  	canvas.setBackgroundColor('rgba(252, 120, 120, 1)', canvas.renderAll.bind(canvas));
+  	$('.backgroundpart').addClass('darkred');
+  	$('.backgroundpart').removeClass('green');
+  	$('.backgroundpart').removeClass('red');
+  	$('.backgroundpart').removeClass('blue');
+   	$('.backgroundpart').removeClass('purple');
+   	$('.backgroundpart').removeClass('slate');
+    $('.backgroundpart').removeClass('lime');
+   	$('.backgroundpart').removeClass('yellow');
+   	$('.backgroundpart').removeClass('orange');
+   	$('.backgroundpart').removeClass('pink');
+   	$('.backgroundpart').removeClass('torquise');
+   	$('.backgroundpart').removeClass('gray');
+  });
+
+  $("#lyric1").click(function(){
+	
+	var text10 = new fabric.Text('“I better find your lovin’\nI better find your heart.\nI bet if I give all my love.\nThen nothing’s gonna tear\nus apart.”', { left: 15, top: 50, fontSize: 25, lineHeight: 1, fontFamily: "blockhead-unplugged", textBackgroundColor: 'rgba(255,157,41, 0)' }, fillStyle = '#000');
+
+	removeObject();
+	canvas.add(text10);
+	canvas.sendToBack(text10);
+	canvas.renderAll();
+	removeOverlay();
+  });	
+  $("#lyric2").click(function(){
+  	
+
+	var text11 = new fabric.Text('“I search for something I’m\nmissing and disappear when I’m\nbored. But girl, what qualities\nwas I looking for before?\nWho you settling for? Who\nbetter for you than the boy?”', { left: 15, top: 50, fontSize: 25, lineHeight: 1, fontFamily: "blockhead-unplugged", textBackgroundColor: 'rgba(255,157,41, 0)' }, fillStyle = '#000');
+
+	removeObject();
+	canvas.add(text11);
+	canvas.sendToBack(text11);
+	canvas.renderAll();
+	removeOverlay();
+  });
+
+  $("#lyric3").click(function(){
+	var text12 = new fabric.Text('“I realize I waited too long,\nbut please don\'t move on.\nYou don\'t need no one else."', { left: 15, top: 50, fontSize: 25, lineHeight: 1, fontFamily: "blockhead-unplugged", textBackgroundColor: 'rgba(255,157,41, 0)' }, fillStyle = '#000');
+
+	removeObject();
+	canvas.add(text12);
+	canvas.sendToBack(text12);
+	canvas.renderAll();
+	removeOverlay();
+  });
+
+  $("#lyric4").click(function(){
+	var text12 = new fabric.Text('“I never had you, although I\nwould be glad to. I\'d probably go\nand tattoo, your name on my\nheart."', { left: 15, top: 50, fontSize: 25, lineHeight: 1, fontFamily: "blockhead-unplugged", textBackgroundColor: 'rgba(255,157,41, 0)' }, fillStyle = '#000');
+
+	removeObject();
+	canvas.add(text12);
+	canvas.sendToBack(text12);
+	canvas.renderAll();
+	removeOverlay();
+  });
+
+  $("#lyric5").click(function(){
+	var text12 = new fabric.Text('“I never said it\'d be fair. But\nwhen you\'re all alone, I hope\nyou truly know how bad I want\nto be there."', { left: 15, top: 50, fontSize: 25, lineHeight: 1, fontFamily: "blockhead-unplugged", textBackgroundColor: 'rgba(255,157,41, 0)' }, fillStyle = '#000');
+
+	removeObject();
+	canvas.add(text12);
+	canvas.sendToBack(text12);
+	canvas.renderAll();
+	removeOverlay();
+  });
+
+    $("#lyric6").click(function(){
+	var text12 = new fabric.Text('“I got bath water you could\nsoak in, things I could do\nwith lotion."', { left: 15, top: 50, fontSize: 25, lineHeight: 1, fontFamily: "blockhead-unplugged", textBackgroundColor: 'rgba(255,157,41, 0)' }, fillStyle = '#000');
+
+	removeObject();
+	canvas.add(text12);
+	canvas.sendToBack(text12);
+	canvas.renderAll();
+	removeOverlay();
+  });
+    $("#lyric7").click(function(){
+	var text12 = new fabric.Text('“They keep telling me don\'t\nsave you. If I ignore all that\nadvice, and something isn\'t\nright. Then who will I complain\nto?”', { left: 15, top: 50, fontSize: 25, lineHeight: 1, fontFamily: "blockhead-unplugged", textBackgroundColor: 'rgba(255,157,41, 0)' }, fillStyle = '#000');
+
+	removeObject();
+	canvas.add(text12);
+	canvas.sendToBack(text12);
+	canvas.renderAll();
+	removeOverlay();
+  });
+    $("#lyric8").click(function(){
+	var text12 = new fabric.Text('“You telling me it\'s only been a\ncouple other people that you\'ve\nbeen with. I\'ma trust you, I\'ma\ngive you the benefit of the\ndoubt, and I\'ma love you. You\ncan even call me daddy, give\nyou someone to look up to.”', { left: 15, top: 50, fontSize: 25, lineHeight: 1, fontFamily: "blockhead-unplugged", textBackgroundColor: 'rgba(255,157,41, 0)' }, fillStyle = '#000');
+
+	removeObject();
+	canvas.add(text12);
+	canvas.sendToBack(text12);
+	canvas.renderAll();
+	removeOverlay();
+  });
+     $("#lyric9").click(function(){
+	var text12 = new fabric.Text('“I need you to rescue me from my\ndestiny. I\'m trying to live\nright and give you whatever\'s\nleft of me.”', { left: 15, top: 50, fontSize: 25, lineHeight: 1, fontFamily: "blockhead-unplugged", textBackgroundColor: 'rgba(255,157,41, 0)' }, fillStyle = '#000');
+
+	removeObject();
+	canvas.add(text12);
+	canvas.sendToBack(text12);
+	canvas.renderAll();
+	removeOverlay();
+  });
+	$("#lyric10").click(function(){
+	var text12 = new fabric.Text('"You could have my heart or we\ncould share it like the last\nslice.”', { left: 15, top: 50, fontSize: 25, lineHeight: 1, fontFamily: "blockhead-unplugged", textBackgroundColor: 'rgba(255,157,41, 0)' }, fillStyle = '#000');
+
+	removeObject();
+	canvas.add(text12);
+	canvas.sendToBack(text12);
+	canvas.renderAll();
+	removeOverlay();
+  });
+  $("#lyric11").click(function(){
+	var text12 = new fabric.Text('"I got an email today. Kind of\nthought that you forgot about\nme. But I want to hit you back\nto say. Just like you, I get\nlonely.”', { left: 15, top: 50, fontSize: 25, lineHeight: 1, fontFamily: "blockhead-unplugged", textBackgroundColor: 'rgba(255,157,41, 0)' }, fillStyle = '#000');
+
+	removeObject();
+	canvas.add(text12);
+	canvas.sendToBack(text12);
+	canvas.renderAll();
+	removeOverlay();
+  });
+  $("#lyric12").click(function(){
+	var text12 = new fabric.Text('“But it\'s too late, cause I\'m\nalready yours. You just gotta\npromise me, hearts won\'t break,\nand end up like before.”', { left: 15, top: 50, fontSize: 25, lineHeight: 1, fontFamily: "blockhead-unplugged", textBackgroundColor: 'rgba(255,157,41, 0)' }, fillStyle = '#000');
+
+	removeObject();
+	canvas.add(text12);
+	canvas.sendToBack(text12);
+	canvas.renderAll();
+	removeOverlay();
+  });
+  $("#lyric13").click(function(){
+	var text13 = new fabric.Text('“Always saw you for what you\ncould\'ve been. Ever since you\nmet me. Like when Chrysler\nmade that one car that looked\njust like the Bentley.”', { left: 15, top: 50, fontSize: 25, lineHeight: 1, fontFamily: "blockhead-unplugged", textBackgroundColor: 'rgba(255,157,41, 0)' }, fillStyle = '#000');
+
+	removeObject();
+	canvas.add(text13);
+	canvas.sendToBack(text13);
+	canvas.renderAll();
+	removeOverlay();
+  });
+  $("#lyric14").click(function(){
+	var text14 = new fabric.Text('“If I ever loved ya, I\'ll always\nlove ya that\'s how I was raised”', { left: 15, top: 50, fontSize: 25, lineHeight: 1, fontFamily: "blockhead-unplugged", textBackgroundColor: 'rgba(255,157,41, 0)' }, fillStyle = '#000');
+
+	removeObject();
+	canvas.add(text14);
+	canvas.sendToBack(text14);
+	canvas.renderAll();
+	removeOverlay();
+  });
+  $("#lyric15").click(function(){
+	var text15 = new fabric.Text('“I know you\'re seein\' someone\nthat loves you. And I don\'t\nwant you to see no one else.\nI don\'t want you here with no\none else. I don\'t wanna do this\nwith no one else.”', { left: 15, top: 50, fontSize: 25, lineHeight: 1, fontFamily: "blockhead-unplugged", textBackgroundColor: 'rgba(255,157,41, 0)' }, fillStyle = '#000');
+
+	removeObject();
+	canvas.add(text15);
+	canvas.sendToBack(text15);
+	canvas.renderAll();
+	removeOverlay();
+  });
+  $("#lyric16").click(function(){
+	var text16 = new fabric.Text('“Working, working, working,\nworking, ain\'t ya? You don\'t\nhave no time to lay up. You just\ntrying to be somebody. \'Fore you\nsay you need somebody. Get all\nyour affairs in order. I won\'t\nhave affairs, I\'m yours, girl.”', { left: 15, top: 50, fontSize: 25, lineHeight: 1, fontFamily: "blockhead-unplugged", textBackgroundColor: 'rgba(255,157,41, 0)' }, fillStyle = '#000');
+
+	removeObject();
+	canvas.add(text16);
+	canvas.sendToBack(text16);
+	canvas.renderAll();
+	removeOverlay();
+  });
+  $("#lyric17").click(function(){
+	var text17 = new fabric.Text('“Pack a bag, you gon\' end up\nstaying where I\'m at. Took you\nfrom the hood and I could never\ngive you back. I just wanna let\nyou know that someone love\nyou back.”', { left: 15, top: 50, fontSize: 25, lineHeight: 1, fontFamily: "blockhead-unplugged", textBackgroundColor: 'rgba(255,157,41, 0)' }, fillStyle = '#000');
+
+	removeObject();
+	canvas.add(text17);
+	canvas.sendToBack(text17);
+	canvas.renderAll();
+	removeOverlay();
+  });
+  $("#lyric18").click(function(){
+	var text18 = new fabric.Text('“And I wanna tell you my\nintentions. I wanna do the\nthings that I mention. I\nwanna benefit from the\nfriendship. I wanna get the\nlate night message from you,\nfrom you.”', { left: 15, top: 50, fontSize: 25, lineHeight: 1, fontFamily: "blockhead-unplugged", textBackgroundColor: 'rgba(255,157,41, 0)' }, fillStyle = '#000');
+
+	removeObject();
+	canvas.add(text18);
+	canvas.sendToBack(text18);
+	canvas.renderAll();
+	removeOverlay();
+  });
+  $("#lyric19").click(function(){
+	var text19 = new fabric.Text('“I think I\'d lie for you\nI think I\'d die for you\nJodeci "Cry For You"\nDo things when you want me to”', { left: 15, top: 50, fontSize: 25, lineHeight: 1, fontFamily: "blockhead-unplugged", textBackgroundColor: 'rgba(255,157,41, 0)' }, fillStyle = '#000');
+
+	removeObject();
+	canvas.add(text19);
+	canvas.sendToBack(text19);
+	canvas.renderAll();
+	removeOverlay();
+  });
+
+  $("#lyric20").click(function(){
+	var text20 = new fabric.Text('“Tell me should I cut these\nother girls right out of my\nlife? Cause we never decided.”', { left: 15, top: 50, fontSize: 25, lineHeight: 1, fontFamily: "blockhead-unplugged", textBackgroundColor: 'rgba(255,157,41, 0)' }, fillStyle = '#000');
+
+	removeObject();
+	canvas.add(text20);
+	canvas.sendToBack(text20);
+	canvas.renderAll();
+	removeOverlay();
+  });
+  $("#lyric21").click(function(){
+	var text21 = new fabric.Text('“Yeah, you\'ve been on my\nmind lately. You\'ve still\ngot my number, girl, you\nneed to call me.”', { left: 15, top: 50, fontSize: 25, lineHeight: 1, fontFamily: "blockhead-unplugged", textBackgroundColor: 'rgba(255,157,41, 0)' }, fillStyle = '#000');
+
+	removeObject();
+	canvas.add(text21);
+	canvas.sendToBack(text21);
+	canvas.renderAll();
+	removeOverlay();
+  });  
+  $("#lyric22").click(function(){
+	var text22 = new fabric.Text('“I got my eyes on you You\'re\neverything that I see I\nwant your hot love and\nemotion endlessly. I can\'t\nget over you. You left your\nmark on me. I want your hot\nlove and emotion endlessly.”', { left: 15, top: 50, fontSize: 25, lineHeight: 1, fontFamily: "blockhead-unplugged", textBackgroundColor: 'rgba(255,157,41, 0)' }, fillStyle = '#000');
+
+	removeObject();
+	canvas.add(text22);
+	canvas.sendToBack(text22);
+	canvas.renderAll();
+	removeOverlay();
+  });  
+  $("#lyric23").click(function(){
+	var text22 = new fabric.Text('“Swanging, eyes closed just\nswanging. Same city, same\nfriends if you\'re looking for\nme. Same city, same friends if\nyou\'re looking. I\'ll be here\njust swanging.”', { left: 15, top: 50, fontSize: 25, lineHeight: 1, fontFamily: "blockhead-unplugged", textBackgroundColor: 'rgba(255,157,41, 0)' }, fillStyle = '#000');
+
+	removeObject();
+	canvas.add(text23);
+	canvas.sendToBack(text23);
+	canvas.renderAll();
+	removeOverlay();
+  });   
+ 
+  $("#face1").click(function(){
+
+	  fabric.loadSVGFromURL('/assets/face1.svg', function(objects, options) {
+	    var shape = fabric.util.groupSVGElements(objects, options);
+	    shape.set({
+	        left: 40, 
+			top: 270, 
+			opacity: 1,
+			scaleY: (canvas.width / shape.width + 2/canvas.width)*.25,
+			scaleX: (canvas.width / shape.width + 2/canvas.width)*.25
+	    });
+
+	    console.log("skyline");
+
+	    //removeObject();
+	    canvas.add(shape);
+	    //shape.set('selectable', false);
+	    //canvas.sendToBack(shape);
+		canvas.renderAll();
+	  }); 
+	  removeOverlay();
+  });
+    $("#face2").click(function(){
+
+	  fabric.loadSVGFromURL('/assets/face2.svg', function(objects, options) {
+	    var shape = fabric.util.groupSVGElements(objects, options);
+	    shape.set({
+	        left: 40, 
+			top: 270,  
+			opacity: 1,
+			scaleY: (canvas.width / shape.width + 2/canvas.width)*.25,
+			scaleX: (canvas.width / shape.width + 2/canvas.width)*.25
+	    });
+
+	    console.log("skyline");
+
+	    //removeObject();
+	    canvas.add(shape);
+	    //shape.set('selectable', false);
+	    //canvas.sendToBack(shape);
+		canvas.renderAll();
+	  }); 
+	  removeOverlay();
+  });
+    $("#face3").click(function(){
+
+	  fabric.loadSVGFromURL('/assets/face3.svg', function(objects, options) {
+	    var shape = fabric.util.groupSVGElements(objects, options);
+	    shape.set({
+	        left: 40, 
+			top: 270,  
+			opacity: 1,
+			scaleY: (canvas.width / shape.width + 2/canvas.width)*.25,
+			scaleX: (canvas.width / shape.width + 2/canvas.width)*.25
+	    });
+
+	    console.log("skyline");
+
+	    //removeObject();
+	    canvas.add(shape);
+	    //shape.set('selectable', false);
+	    //canvas.sendToBack(shape);
+		canvas.renderAll();
+	  }); 
+	  removeOverlay();
+  });
+    $("#face4").click(function(){
+
+	  fabric.loadSVGFromURL('/assets/face4.svg', function(objects, options) {
+	    var shape = fabric.util.groupSVGElements(objects, options);
+	    shape.set({
+	        left: 40, 
+			top: 270,   
+			opacity: 1,
+			scaleY: (canvas.width / shape.width + 2/canvas.width)*.25,
+			scaleX: (canvas.width / shape.width + 2/canvas.width)*.25
+	    });
+
+	    console.log("skyline");
+
+	    //removeObject();
+	    canvas.add(shape);
+	    //shape.set('selectable', false);
+	    //canvas.sendToBack(shape);
+		canvas.renderAll();
+	  }); 
+	  removeOverlay();
+  });
+    $("#face5").click(function(){
+
+	  fabric.loadSVGFromURL('/assets/face5.svg', function(objects, options) {
+	    var shape = fabric.util.groupSVGElements(objects, options);
+	    shape.set({
+	        left: 40, 
+			top: 270,   
+			opacity: 1,
+			scaleY: (canvas.width / shape.width + 2/canvas.width)*.25,
+			scaleX: (canvas.width / shape.width + 2/canvas.width)*.25
+	    });
+
+	    console.log("skyline");
+
+	    //removeObject();
+	    canvas.add(shape);
+	    //shape.set('selectable', false);
+	    //canvas.sendToBack(shape);
+		canvas.renderAll();
+	  }); 
+	  removeOverlay();
+  });
+    $("#face6").click(function(){
+
+	  fabric.loadSVGFromURL('/assets/face6.svg', function(objects, options) {
+	    var shape = fabric.util.groupSVGElements(objects, options);
+	    shape.set({
+	        left: 40, 
+			top: 270,   
+			opacity: 1,
+			scaleY: (canvas.width / shape.width + 2/canvas.width)*.25,
+			scaleX: (canvas.width / shape.width + 2/canvas.width)*.25
+	    });
+
+	    console.log("skyline");
+
+	    //removeObject();
+	    canvas.add(shape);
+	    //shape.set('selectable', false);
+	    //canvas.sendToBack(shape);
+		canvas.renderAll();
+	  }); 
+	  removeOverlay();
+  });
+    $("#face7").click(function(){
+
+	  fabric.loadSVGFromURL('/assets/face7.svg', function(objects, options) {
+	    var shape = fabric.util.groupSVGElements(objects, options);
+	    shape.set({
+	        left: 40, 
+			top: 270,   
+			opacity: 1,
+			scaleY: (canvas.width / shape.width + 2/canvas.width)*.25,
+			scaleX: (canvas.width / shape.width + 2/canvas.width)*.25
+	    });
+
+	    console.log("skyline");
+
+	    //removeObject();
+	    canvas.add(shape);
+	    //shape.set('selectable', false);
+	    //canvas.sendToBack(shape);
+		canvas.renderAll();
+	  }); 
+	  removeOverlay();
+  });
+     $("#face8").click(function(){
+
+	  fabric.loadSVGFromURL('/assets/face8.svg', function(objects, options) {
+	    var shape = fabric.util.groupSVGElements(objects, options);
+	    shape.set({
+	        left: 40, 
+			top: 270,   
+			opacity: 1,
+			scaleY: (canvas.width / shape.width + 2/canvas.width)*.25,
+			scaleX: (canvas.width / shape.width + 2/canvas.width)*.25
+	    });
+
+	    console.log("skyline");
+
+	    //removeObject();
+	    canvas.add(shape);
+	    //shape.set('selectable', false);
+	    //canvas.sendToBack(shape);
+		canvas.renderAll();
+	  }); 
+	  removeOverlay();
+  });
+      // fabric.Image.fromURL('/assets/cltskylineyellow.png', function(oImg) {
+		  // scale image down, and flip it, before adding it onto canvas
+		//  oImg.scale(1);
+		//  oImg.set({
+		 // 	left: -1, 
+		 // 	top: 149, 
+		 // 	opacity: .7,
+		 // 	scaleY: canvas.width / oImg.width + 2/canvas.width,
+		//	scaleX: canvas.width / oImg.width + 2/canvas.width
+		//  });
+		 // canvas.add(oImg);
+		 // oImg.set('selectable', false);
+		//  canvas.sendToBack(oImg);
+		// });
+
+
+	function addText() {
+
+
+		var text2 = new fabric.Text(document.getElementById('hiddentextform1').textContent, { left: 15, top: 10, fontSize: 25, fontFamily: "blockhead-unplugged" }, fillStyle = '#000');
+		var text4 = new fabric.Text(document.getElementById('hiddentextform2').textContent, { left: 170, top: 320, fontSize: 25, fontFamily: "blockhead-unplugged", textBackgroundColor: 'rgba(255,157,41, 0)' }, fillStyle = '#000');
+		var mytext11 = document.getElementById('text11').value;
+		var mytext22 = document.getElementById('text22').value;
+
+		//text2.set({fill: '#fff'});
+		//text4.set({fill: '#fff'});
+			canvas.add(text2);
+			canvas.add(text4);
+
+	    	$('#hdmenu1').removeClass('revealed');
+	    	$('.overlay').addClass('nodisplay');
+	    	$('body').removeClass("noscroll");
+
+	}
+
+
+	function removeText() {
+		var textremove1 = canvas.item(5);
+		var textremove2 = canvas.item(6);
+		var imageremove = canvas.item(8);
+
+		canvas.remove(textremove1);
+		canvas.remove(textremove2);
+		canvas.remove(imageremove);
+		
+	}
+
+	function removeOverlay() {
+	    $('#hdmenu1').removeClass('revealed');
+	    $('#hdmenu2').removeClass('revealed');
+	    $('#hdmenu3').removeClass('revealed');
+	    $('#hdmenu4').removeClass('revealed');
+	    $('#hdmenu5').removeClass('revealed');
+	    $('.overlay').addClass('nodisplay');
+	    $('body').removeClass("noscroll");
+	}
+
+
+        
+    function formChanged() {  
+        
+		var texthidden1 = document.getElementsByName("textform1")[0].value;
+		var texthidden2 = document.getElementsByName("textform2")[0].value;
+
+		document.getElementById("hiddentextform1").textContent = texthidden1;
+		document.getElementById("hiddentextform2").textContent = texthidden2;
+
+	}
+
+	$("#delete0").click(function(){
+	  var textremove0 = canvas.item(0);
+	  canvas.remove(textremove0);
+	});
+	$("#delete1").click(function(){
+	  var textremove1 = canvas.item(1);
+	  canvas.remove(textremove1);
+	});
+	$("#delete2").click(function(){
+	  var textremove2 = canvas.item(2);
+	  canvas.remove(textremove2);
+	});
+	$("#delete3").click(function(){
+	  var textremove3 = canvas.item(3);
+	  canvas.remove(textremove3);
+	});
+	$("#delete4").click(function(){
+	  var textremove4 = canvas.item(4);
+	  canvas.remove(textremove4);
+	});
+	$("#delete5").click(function(){
+	  var textremove5 = canvas.item(5);
+	  canvas.remove(textremove5);
+	});
+	$("#delete6").click(function(){
+	  var textremove6 = canvas.item(6);
+	  canvas.remove(textremove6);
+	});
+	$("#delete7").click(function(){
+	  var textremove7 = canvas.item(7);
+	  canvas.remove(textremove7);
+	});
+	$("#delete8").click(function(){
+	  var textremove8 = canvas.item(8);
+	  canvas.remove(textremove8);
+	});
+	$("#delete9").click(function(){
+	  var textremove9 = canvas.item(9);
+	  canvas.remove(textremove9);
+	});
+	$("#delete10").click(function(){
+	  var textremove10 = canvas.item(10);
+	  canvas.remove(textremove10);
+	});
+	$("#deleteall").click(function(){
+
+	    deleteObjects();
+	});
+
+	function saveCanvas(){
+			      // save canvas image as data url (png format by default)
+		//var addImage = document.createElement("img");
+		//addImage.src = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+		//addImage.alt="checkoutclt.png";
+		//addImage.title="checkoutclt.png";
+		//console.log(addImage);
+		//window.location.href=addImage.src;
+		canvas.deactivateAll().renderAll();
+
+		var link = document.createElement('a');
+		link.href = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+		link.download = 'happydrakentine.png';
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
+		
+
+		  if (imageCheck) {
+		  		canvas.deactivateAll().renderAll();  
+		  		//var image3 = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");  // here is the most important part because if you dont replace you will get a DOM 18 exception.
+
+
+				//window.location.href=image3; // it will save locally
+
+		  }
+		  
+      
+	}
+
+	function saveCanvas2(){
+	
+	canvas.deactivateAll().renderAll();
+	console.log('export image');
+	 if (isIE11 || isIE || isIE6 || isIE8 || isIE7) {
+		window.open(canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"));
+	}
+	else {
+	
+	 window.open(canvas.toDataURL('png'),'_blank');
+
+	}
+		  
+      
+	}
+	function removeImage(){
+		var lastimage = canvas.item(0);
+	     canvas.remove(lastimage);
+	     canvas.renderAll(); 
+	}
+
+	function removeObject(){
+		var imageremove = canvas.item(0);
+	     canvas.remove(imageremove);
+	     canvas.renderAll(); 
+	     console.log("Object removed");
+	}
+
+
+
+
+	// select all objects
+	function deleteObjects(){
+		var activeObject = canvas.getActiveObject(),
+	    activeGroup = canvas.getActiveGroup();
+	    if (activeObject) {
+	        if (confirm('Are you sure?')) {
+	            canvas.remove(activeObject);
+	        }
+	    }
+	    else if (activeGroup) {
+	        if (confirm('Are you sure?')) {
+	            var objectsInGroup = activeGroup.getObjects();
+	            canvas.discardActiveGroup();
+	            objectsInGroup.forEach(function(object) {
+	            canvas.remove(object);
+	            });
+	        }
+	    }
+	}
+
+	document.getElementById('fileElem').onchange = function handleImage(e) {
+	    var reader = new FileReader();
+	    reader.onload = function (event) { console.log('fdsf');
+	        var imgObj = new Image();
+	        imgObj.src = event.target.result;
+	        imgObj.onload = function () {
+	            // start fabricJS stuff
+	            
+	            var image = new fabric.Image(imgObj);
+
+	            //image.scale(getRandomNum(0.1, 0.25)).setCoords();
+
+	   
+	            if (image.width > image.height) {
+	         
+			            image.set({
+						    top: -1,
+						    left: -(((image.width*(canvas.height / image.height)) - canvas.width)/2),
+						    scaleY: (canvas.height / image.height) + 2/canvas.height,
+						    scaleX: canvas.height / image.height
+						});
+	          
+	            } else if (image.width < image.height) {
+
+		            image.set({
+					    top: -(((image.height*(canvas.width / image.width)) - canvas.height)/2),
+					    left: -1,
+					    scaleY: canvas.width / image.width,
+					    scaleX: (canvas.width / image.width) + 2/canvas.width
+					});
+
+	            } else {
+
+		            image.set({
+					    top: -1,
+					    left: -1,
+					    scaleY: (canvas.height / image.height) + 2/canvas.height,
+					    scaleX: (canvas.width / image.width) + 2/canvas.width
+					});
+	            }
+
+
+	         
+
+	            canvas.add(image);
+	            image.set('selectable', false);
+
+	            canvas.sendToBack(image);
+	            
+	            // end fabricJS stuff
+	        }
+	        
+	    }
+	    reader.readAsDataURL(e.target.files[0]);
+	    imageCheck = true;
+
+	     $("#step22").removeClass("active");
+		 $("#step32").addClass("active");
+		 $("#fileSelect").removeClass("active");
+		 $("#fileUpdate").addClass("active");
+	}
+
+
+
+// replace image
+	document.getElementById('fileElem2').onchange = function handleImage(e) {
+	    var reader2 = new FileReader();
+	    reader2.onload = function (event) { console.log('fdsf222');
+	    	removeImage();
+	        var imgObj2 = new Image();
+	        imgObj2.src = event.target.result;
+	        imgObj2.onload = function () {
+	            // start fabricJS stuff
+	            
+	            var image2 = new fabric.Image(imgObj2);
+
+	            //image.scale(getRandomNum(0.1, 0.25)).setCoords();
+
+	   
+	            if (image2.width > image2.height) {
+	         
+			            image2.set({
+						    top: -1,
+						    left: -(((image2.width*(canvas.height / image2.height)) - canvas.width)/2),
+						    scaleY: (canvas.height / image2.height) + 2/canvas.height,
+						    scaleX: canvas.height / image2.height
+						});
+	          
+	            } else if (image2.width < image2.height) {
+
+		            image2.set({
+					    top: -(((image2.height*(canvas.width / image2.width)) - canvas.height)/2),
+					    left: -1,
+					    scaleY: canvas.width / image2.width,
+					    scaleX: (canvas.width / image2.width) + 2/canvas.width
+					});
+
+	            } else {
+
+		            image2.set({
+					    top: -1,
+					    left: -1,
+					    scaleY: (canvas.height / image2.height) + 2/canvas.height,
+					    scaleX: (canvas.width / image2.width) + 2/canvas.width
+					});
+	            }
+
+
+	         
+
+	            canvas.add(image2);
+	            image2.set('selectable', false);
+
+	            canvas.sendToBack(image2);
+	            
+	            // end fabricJS stuff
+	        }
+	        
+	    }
+	    reader2.readAsDataURL(e.target.files[0]);
+	    imageCheck = true;
+
+	   //  $("#step22").removeClass("active");
+		// $("#step32").addClass("active");
+		// $("#fileSelect").removeClass("active");
+		// $("#fileUpdate").addClass("active");
+	}
+
+	    var ranger = document.getElementById('scale-control');
+	    
+
+	            ranger.onchange = function(){
+	            	var imagehere = canvas.item(0);
+	            	console.log(ranger.value);
+
+	            if (imagehere.width > imagehere.height) {
+	         
+			            imagehere.set({
+						    top: -1,
+						    left: -(((canvas.height / imagehere.height)*imagehere.width) -canvas.width)/2,
+						    scaleY: ((canvas.height / imagehere.height) + 2/canvas.height)*ranger.value,
+						    scaleX: (canvas.height / imagehere.height)*ranger.value
+						});
+	          
+	            } else if (imagehere.width < imagehere.height) {
+
+		            imagehere.set({
+					    top: -(((canvas.width / imagehere.width)*imagehere.height) -canvas.height)/2,
+					    left: -1,
+					    scaleY: (canvas.width / imagehere.width)*ranger.value,
+					    scaleX: (((canvas.width / imagehere.width)*ranger.value) + 2/canvas.width)
+					});
+
+	            } else {
+
+		            imagehere.set({
+					    top: -1,
+					    left: -1,
+					    scaleY: (((canvas.height / imagehere.height)*ranger.value) + 2/canvas.height),
+					    scaleX: (((canvas.width / imagehere.width)*ranger.value) + 2/canvas.width)
+					});
+	            }
+
+					 canvas.renderAll();
+
+				}
+
+	var fileSelect = document.getElementById("fileSelect"),
+	  fileElem = document.getElementById("fileElem");
+
+	fileSelect.addEventListener("click", function (e) {
+	  if (fileElem) {
+	    fileElem.click();
+	  }
+	  e.preventDefault(); // prevent navigation to "#"
+	}, false);
+
+//update image
+
+	var fileUpdate = document.getElementById("fileUpdate"),
+	  fileElem2 = document.getElementById("fileElem2");
+
+	fileUpdate.addEventListener("click", function (e) {
+	  if (fileElem2) {
+	    fileElem2.click();
+	  }
+	  e.preventDefault(); // prevent navigation to "#"
+	}, false);
+
+
+		
+
+	//function addImage() {
+	//	fabric.Image.fromURL('/assets/oktoberfest5.JPG', function(oImg2) {
+	//	  // scale image down, and flip it, before adding it onto canvas
+	//	  oImg2.scale(.2);
+	//	  canvas.add(oImg2);
+	//	  
+	//	  canvas.sendToBack(oImg2);
+	//	 });
+	//}
+
+
+    </script>
+
