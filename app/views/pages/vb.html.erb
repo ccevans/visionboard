@@ -16,7 +16,7 @@
 								<h1>Happy Drakentine</h1>
 								<p>(Scroll down to choose lyrics, background color & add faces.)</p>
 							<div class="canvascontainer">
-									<canvas id="myCanvas" width="400" height="400" margin="0 auto 0 auto"></canvas>
+									<canvas id="myCanvas" width="400" height="600" margin="0 auto 0 auto"></canvas>
 
 									<input type="file" id="fileElem" multiple accept="image/*" style="display:none; width:300px;" onchange="handleFiles(this.files)">
 
@@ -464,7 +464,7 @@ if(isIE11 || isIE || isIE6 || isIE8 || isIE7 || isIE7InIE8 || isSafari || isSafa
 
         var canvas = new fabric.Canvas('myCanvas');
         var imageCheck = false;
-        canvas.setHeight(400);
+        canvas.setHeight(600);
 		canvas.setWidth(400);
 
         canvas.hoverCursor = 'move';
